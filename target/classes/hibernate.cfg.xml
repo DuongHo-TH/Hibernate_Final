@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE hibernate-configuration PUBLIC 
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Hibernate mapping để tạo lược đồ DDL một cách tự động. -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<!-- Lớp trình điều khiển JDBC cho SQL Server. -->
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<!-- Mật khẩu để kết nối đến cơ sở dữ liệu. -->
+		<property name="hibernate.connection.password">123456789</property>
+		<!-- URL kết nối đến cơ sở dữ liệu SQL Server. -->
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=Hibernate_Final;encrypt=false;trustServerCertificate=false</property>
+		<!-- Tên người dùng để kết nối đến cơ sở dữ liệu. -->
+		<property name="hibernate.connection.username">sa</property>
+		<!-- Hiển thị các câu lệnh SQL được tạo ra bởi Hibernate trong quá trình 
+			thực thi. -->
+		<property name="show_sql">false</property>
+		<!-- Dialect (ngôn ngữ) của cơ sở dữ liệu SQL Server. -->
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+		<!-- Đây là phần khai báo các lớp được ánh xạ vào cơ sở dữ liệu thông qua 
+			Hibernate. -->
+		<mapping class="fa.training.entities.LoaiTaiSan"></mapping>
+		<mapping class="fa.training.entities.NhanVien"></mapping>
+		<mapping class="fa.training.entities.NhanVienTaiSan"></mapping>
+		<mapping class="fa.training.entities.PhongBan"></mapping>
+		<mapping class="fa.training.entities.TaiSan"></mapping>
+	</session-factory>
+</hibernate-configuration> 
